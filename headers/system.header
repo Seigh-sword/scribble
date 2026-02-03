@@ -1,0 +1,57 @@
+// system.header
+// System and OS utilities for Scribble (like Python's os module, but more)
+
+functions:
+  - name: system_getcwd
+    signature: fn() -> str
+    description: "Get current working directory"
+  
+  - name: system_listdir
+    signature: fn(path: str) -> array
+    description: "List directory contents"
+  
+  - name: system_exists
+    signature: fn(path: str) -> bool
+    description: "Check if path exists"
+  
+  - name: system_isfile
+    signature: fn(path: str) -> bool
+    description: "Check if path is a file"
+  
+  - name: system_isdir
+    signature: fn(path: str) -> bool
+    description: "Check if path is a directory"
+  
+  - name: system_mkdir
+    signature: fn(path: str) -> bool
+    description: "Create directory"
+  
+  - name: system_remove
+    signature: fn(path: str) -> bool
+    description: "Remove file"
+  
+  - name: system_rmdir
+    signature: fn(path: str) -> bool
+    description: "Remove directory"
+  
+  - name: system_getenv
+    signature: fn(name: str) -> str
+    description: "Get environment variable"
+  
+  - name: system_setenv
+    signature: fn(name: str, value: str) -> bool
+    description: "Set environment variable"
+  
+  - name: system_execute
+    signature: fn(cmd: str) -> i32
+    description: "Execute shell command, return exit code"
+  
+  - name: system_hostname
+    signature: fn() -> str
+    description: "Get hostname"
+  
+  - name: system_platform
+    signature: fn() -> str
+    description: "Get OS platform name"
+
+implementation: attributes/system

@@ -1,0 +1,130 @@
+{
+  "attributes": {
+    "time": {
+      "crate": "attributes/time",
+      "cdylib": "scribble_time",
+      "header": "headers/time.header",
+      "description": "Time, date, and clock utilities",
+      "functions": [
+        "time_now",
+        "time_year",
+        "time_month",
+        "time_day",
+        "time_hour",
+        "time_minute",
+        "time_second",
+        "time_weekday"
+      ]
+    },
+    "system": {
+      "crate": "attributes/system",
+      "cdylib": "scribble_system",
+      "header": "headers/system.header",
+      "description": "OS and filesystem operations (Python os module + more)",
+      "functions": [
+        "system_getcwd",
+        "system_listdir",
+        "system_exists",
+        "system_isfile",
+        "system_isdir",
+        "system_mkdir",
+        "system_remove",
+        "system_rmdir",
+        "system_getenv",
+        "system_setenv",
+        "system_execute",
+        "system_hostname",
+        "system_platform"
+      ]
+    },
+    "canvas": {
+      "crate": "attributes/canvas",
+      "cdylib": "scribble_canvas",
+      "header": "headers/canvas.header",
+      "description": "Drawing and graphics (OpenGL + pygame + tkinter + React + CSS)",
+      "functions": [
+        "canvas_init",
+        "canvas_close",
+        "canvas_clear",
+        "canvas_flush",
+        "canvas_line",
+        "canvas_rect",
+        "canvas_circle",
+        "canvas_polygon",
+        "canvas_text",
+        "canvas_image",
+        "canvas_icon",
+        "canvas_key_pressed",
+        "canvas_mouse_x",
+        "canvas_mouse_y",
+        "canvas_mouse_button",
+        "canvas_set_stroke",
+        "canvas_set_fill",
+        "canvas_set_font"
+      ]
+    },
+    "math": {
+      "crate": "attributes/math",
+      "cdylib": "scribble_math",
+      "header": "headers/math.header",
+      "description": "Mathematical functions and utilities",
+      "functions": [
+        "math_abs",
+        "math_sqrt",
+        "math_pow",
+        "math_floor",
+        "math_ceil",
+        "math_round",
+        "math_sin",
+        "math_cos",
+        "math_tan",
+        "math_asin",
+        "math_acos",
+        "math_atan",
+        "math_log",
+        "math_log10",
+        "math_exp",
+        "math_random",
+        "math_random_float",
+        "math_min",
+        "math_max"
+      ]
+    },
+    "string": {
+      "crate": "attributes/string",
+      "cdylib": "scribble_string",
+      "header": "headers/string.header",
+      "description": "String manipulation utilities",
+      "functions": [
+        "string_length",
+        "string_upper",
+        "string_lower",
+        "string_trim",
+        "string_contains",
+        "string_startswith",
+        "string_endswith",
+        "string_replace",
+        "string_index",
+        "string_reverse",
+        "string_repeat",
+        "string_tonum",
+        "string_fromnum"
+      ]
+    },
+    "file": {
+      "crate": "attributes/file",
+      "cdylib": "scribble_file",
+      "header": "headers/file.header",
+      "description": "File I/O utilities",
+      "functions": [
+        "file_read",
+        "file_write",
+        "file_append",
+        "file_size",
+        "file_delete",
+        "file_copy",
+        "file_rename"
+      ]
+    }
+  }
+}

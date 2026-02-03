@@ -1,0 +1,69 @@
+// string.header
+// String manipulation utilities
+
+functions:
+  - name: string_length
+    signature: fn(s: str) -> i32
+    description: "Get string length"
+  
+  - name: string_upper
+    signature: fn(s: str) -> str
+    description: "Convert to uppercase"
+  
+  - name: string_lower
+    signature: fn(s: str) -> str
+    description: "Convert to lowercase"
+  
+  - name: string_trim
+    signature: fn(s: str) -> str
+    description: "Trim whitespace"
+  
+  - name: string_split
+    signature: fn(s: str, delimiter: str) -> array
+    description: "Split string by delimiter"
+  
+  - name: string_join
+    signature: fn(arr: array, delimiter: str) -> str
+    description: "Join array elements"
+  
+  - name: string_replace
+    signature: fn(s: str, old: str, new: str) -> str
+    description: "Replace substring"
+  
+  - name: string_contains
+    signature: fn(s: str, substr: str) -> bool
+    description: "Check if string contains substring"
+  
+  - name: string_startswith
+    signature: fn(s: str, prefix: str) -> bool
+    description: "Check if string starts with prefix"
+  
+  - name: string_endswith
+    signature: fn(s: str, suffix: str) -> bool
+    description: "Check if string ends with suffix"
+  
+  - name: string_substring
+    signature: fn(s: str, start: i32, end: i32) -> str
+    description: "Extract substring"
+  
+  - name: string_index
+    signature: fn(s: str, substr: str) -> i32
+    description: "Find index of substring (-1 if not found)"
+  
+  - name: string_reverse
+    signature: fn(s: str) -> str
+    description: "Reverse string"
+  
+  - name: string_repeat
+    signature: fn(s: str, count: i32) -> str
+    description: "Repeat string n times"
+  
+  - name: string_tonum
+    signature: fn(s: str) -> f64
+    description: "Convert string to number"
+  
+  - name: string_fromnum
+    signature: fn(n: f64) -> str
+    description: "Convert number to string"
+
+implementation: attributes/string

@@ -1,0 +1,37 @@
+// time.header
+// Time and date utilities for Scribble
+
+functions:
+  - name: time_now
+    signature: fn() -> f64
+    description: "Get current UNIX timestamp"
+  
+  - name: time_year
+    signature: fn() -> i32
+    description: "Get current year"
+  
+  - name: time_month
+    signature: fn() -> i32
+    description: "Get current month (1-12)"
+  
+  - name: time_day
+    signature: fn() -> i32
+    description: "Get current day of month"
+  
+  - name: time_hour
+    signature: fn() -> i32
+    description: "Get current hour (0-23)"
+  
+  - name: time_minute
+    signature: fn() -> i32
+    description: "Get current minute (0-59)"
+  
+  - name: time_second
+    signature: fn() -> i32
+    description: "Get current second (0-59)"
+  
+  - name: time_weekday
+    signature: fn() -> i32
+    description: "Get day of week (0=Mon, 6=Sun)"
+
+implementation: attributes/time

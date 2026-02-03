@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.13)
+project(scribble LANGUAGES C CXX ASM)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Runtime example (mixed C/C++/asm)
+add_executable(scribble_example
+    src/main.cpp
+    src/hello.c
+    src/asm_helper.S
+)
+
+target_include_directories(scribble_example PRIVATE src)
+set_target_properties(scribble_example PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+)
+
+# Compiler (scribblec)
+include(${CMAKE_CURRENT_SOURCE_DIR}/compiler/CMakeLists.txt)

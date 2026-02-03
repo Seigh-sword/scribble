@@ -1,0 +1,79 @@
+
+functions:
+  // Window/Display
+  - name: canvas_init
+    signature: fn(width: i32, height: i32, title: str) -> bool
+    description: "Initialize canvas window"
+  
+  - name: canvas_close
+    signature: fn() -> void
+    description: "Close canvas window"
+  
+  - name: canvas_clear
+    signature: fn(r: i32, g: i32, b: i32) -> void
+    description: "Clear canvas with RGB color"
+  
+  - name: canvas_flush
+    signature: fn() -> void
+    description: "Flush/display drawn content"
+  
+  // Drawing primitives
+  - name: canvas_line
+    signature: fn(x1: i32, y1: i32, x2: i32, y2: i32, r: i32, g: i32, b: i32) -> void
+    description: "Draw line"
+  
+  - name: canvas_rect
+    signature: fn(x: i32, y: i32, w: i32, r: i32, g: i32, b: i32, fill: bool) -> void
+    description: "Draw rectangle (filled or outline)"
+  
+  - name: canvas_circle
+    signature: fn(x: i32, y: i32, radius: i32, r: i32, g: i32, b: i32, fill: bool) -> void
+    description: "Draw circle"
+  
+  - name: canvas_polygon
+    signature: fn(points: array, r: i32, g: i32, b: i32, fill: bool) -> void
+    description: "Draw polygon from points"
+  
+  - name: canvas_text
+    signature: fn(x: i32, y: i32, text: str, size: i32, r: i32, g: i32, b: i32) -> void
+    description: "Draw text"
+  
+  - name: canvas_image
+    signature: fn(x: i32, y: i32, path: str) -> void
+    description: "Draw image from file"
+  
+  - name: canvas_icon
+    signature: fn(x: i32, y: i32, icon_name: str, size: i32) -> void
+    description: "Draw icon by name"
+  
+  // Input/Events
+  - name: canvas_key_pressed
+    signature: fn(key: str) -> bool
+    description: "Check if key is pressed"
+  
+  - name: canvas_mouse_x
+    signature: fn() -> i32
+    description: "Get mouse X position"
+  
+  - name: canvas_mouse_y
+    signature: fn() -> i32
+    description: "Get mouse Y position"
+  
+  - name: canvas_mouse_button
+    signature: fn(button: i32) -> bool
+    description: "Check if mouse button pressed (1=left, 2=middle, 3=right)"
+  
+  // Styling (CSS-like)
+  - name: canvas_set_stroke
+    signature: fn(width: f32, r: i32, g: i32, b: i32) -> void
+    description: "Set stroke style"
+  
+  - name: canvas_set_fill
+    signature: fn(r: i32, g: i32, b: i32) -> void
+    description: "Set fill color"
+  
+  - name: canvas_set_font
+    signature: fn(family: str, size: i32, bold: bool, italic: bool) -> void
+    description: "Set font style"
+
+implementation: attributes/canvas

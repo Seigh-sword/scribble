@@ -1,0 +1,159 @@
+# Build & Development Commands
+
+Scribble uses **ses** (Scribble Execution Service) CLI for easy project management.
+
+## Available Commands
+
+### `ses build`
+Builds the complete Scribble compiler and runtime.
+```bash
+ses build
+```
+- Cleans previous build
+- Runs CMake configuration
+- Compiles all C++, C, and assembly sources
+- Outputs to `build/bin/`
+
+### `ses check`
+Comprehensive code checker that inspects every file and reports errors.
+```bash
+ses check
+```
+- Displays full project tree structure
+- Checks C++ headers and sources
+- Validates C files
+- Inspects assembly files
+- Verifies Rust attribute crates
+- Validates JSON configuration files
+- Runs CMake configuration check
+- **Generates detailed error/warning report**
+
+### `ses test`
+Runs the test suite (5 comprehensive tests).
+```bash
+ses test
+```
+Tests:
+1. Compiler help/usage
+2. Compilation to C++
+3. Compilation to C
+4. Compilation to x86-64 assembly
+5. Runtime example execution
+
+### `ses lint`
+Checks code style and potential issues.
+```bash
+ses lint
+```
+- Scans for TODO/FIXME comments
+- Checks for trailing whitespace
+- Validates include paths
+- Reports style issues
+
+### `ses compile`
+Compiles `.scrib` files using the Scribble compiler.
+```bash
+ses compile examples/hello.scrib
+ses compile examples/hello.scrib --lang c
+ses compile examples/hello.scrib --lang asm --output generated.s
+```
+Options:
+- `--lang cpp|c|asm` - Output language (default: cpp)
+- `--output <file>` - Output filename
+
+### `ses tree`
+Displays the project structure and statistics.
+```bash
+ses tree
+```
+Shows:
+- Full directory tree (excluding build/ and .git/)
+- Line counts by file type
+- File statistics
+- Crate summary
+
+### `ses clean`
+Removes the build directory.
+```bash
+ses clean
+```
+
+### `ses version`
+Display version information.
+```bash
+ses version
+```
+
+### `ses help`
+Show the help menu.
+```bash
+ses help
+```
+
+## Workflow Example
+
+```bash
+# 1. Build the compiler
+ses build
+
+# 2. Check all files
+ses check
+
+# 3. Run tests
+ses test
+
+# 4. Compile a .scrib file
+ses compile examples/hello.scrib --lang cpp
+
+# 5. View project structure
+ses tree
+
+# 6. Lint code
+ses lint
+
+# 7. Clean build
+ses clean
+```
+
+## Output Example: `ses check`
+
+```
+========================================
+Scribble: Comprehensive Code Checker
+========================================
+
+Project Structure:
+[Full tree displayed]
+
+Checking C++ Files:
+✓ compiler/src/lexer.cpp (200 lines, 5234 bytes)
+  ✓ Header guards OK
+  ✓ Stream operators found
+
+...
+
+Checking Configuration Files:
+✓ attributes.json (valid JSON)
+✓ package.json (valid JSON)
+
+Compilation Check:
+✓ CMakeLists.txt found
+✓ CMake configuration OK
+
+========================================
+Check Summary
+========================================
+  Files checked: 32
+  Errors found: 0
+  Warnings: 0
+  Status: ✓ ALL CHECKS PASSED
+```
+
+## Tips
+
+- Run `ses check` before committing code
+- Use `ses test` to verify compiler works
+- `ses tree` shows project statistics
+- All scripts are in `scripts/` folder
+- Logs are colored for easy reading
+- `scs` is located in project root

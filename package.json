@@ -1,0 +1,29 @@
+{
+  "name": "scribble",
+  "version": "0.1.0",
+  "description": "Scribble: A polyglot language mixing Python-like syntax with C, C++, assembly, and Rust",
+  "main": "compiler/src/main.cpp",
+  "scripts": {
+    "check": "bash scripts/check.sh",
+    "build": "bash scripts/build.sh",
+    "lint": "bash scripts/lint.sh",
+    "clean": "rm -rf build/",
+    "test": "bash scripts/test.sh",
+    "compile": "bash scripts/compile.sh",
+    "tree": "bash scripts/tree.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Seigh-sword/scribble.git"
+  },
+  "keywords": [
+    "language",
+    "compiler",
+    "polyglot",
+    "c++",
+    "rust",
+    "assembly"
+  ],
+  "author": "Seigh-sword",
+  "license": "MIT"
+}

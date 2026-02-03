@@ -1,0 +1,81 @@
+// math.header
+// Mathematical functions and utilities
+
+functions:
+  - name: math_abs
+    signature: fn(x: f64) -> f64
+    description: "Absolute value"
+  
+  - name: math_sqrt
+    signature: fn(x: f64) -> f64
+    description: "Square root"
+  
+  - name: math_pow
+    signature: fn(base: f64, exp: f64) -> f64
+    description: "Power function"
+  
+  - name: math_floor
+    signature: fn(x: f64) -> i32
+    description: "Floor function"
+  
+  - name: math_ceil
+    signature: fn(x: f64) -> i32
+    description: "Ceiling function"
+  
+  - name: math_round
+    signature: fn(x: f64) -> i32
+    description: "Round to nearest integer"
+  
+  - name: math_sin
+    signature: fn(x: f64) -> f64
+    description: "Sine (radians)"
+  
+  - name: math_cos
+    signature: fn(x: f64) -> f64
+    description: "Cosine (radians)"
+  
+  - name: math_tan
+    signature: fn(x: f64) -> f64
+    description: "Tangent (radians)"
+  
+  - name: math_asin
+    signature: fn(x: f64) -> f64
+    description: "Arcsine"
+  
+  - name: math_acos
+    signature: fn(x: f64) -> f64
+    description: "Arccosine"
+  
+  - name: math_atan
+    signature: fn(x: f64) -> f64
+    description: "Arctangent"
+  
+  - name: math_log
+    signature: fn(x: f64) -> f64
+    description: "Natural logarithm"
+  
+  - name: math_log10
+    signature: fn(x: f64) -> f64
+    description: "Base-10 logarithm"
+  
+  - name: math_exp
+    signature: fn(x: f64) -> f64
+    description: "e^x"
+  
+  - name: math_random
+    signature: fn(min: i32, max: i32) -> i32
+    description: "Random integer between min and max"
+  
+  - name: math_random_float
+    signature: fn() -> f64
+    description: "Random float 0.0-1.0"
+  
+  - name: math_min
+    signature: fn(a: f64, b: f64) -> f64
+    description: "Minimum of two values"
+  
+  - name: math_max
+    signature: fn(a: f64, b: f64) -> f64
+    description: "Maximum of two values"
+
+implementation: attributes/math

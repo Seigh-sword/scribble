@@ -1,0 +1,57 @@
+// file.header
+// File I/O utilities
+
+functions:
+  - name: file_read
+    signature: fn(path: str) -> str
+    description: "Read entire file as string"
+  
+  - name: file_write
+    signature: fn(path: str, content: str) -> bool
+    description: "Write string to file"
+  
+  - name: file_append
+    signature: fn(path: str, content: str) -> bool
+    description: "Append string to file"
+  
+  - name: file_open
+    signature: fn(path: str, mode: str) -> handle
+    description: "Open file (mode: r, w, a, r+)"
+  
+  - name: file_close
+    signature: fn(handle: handle) -> bool
+    description: "Close file handle"
+  
+  - name: file_readline
+    signature: fn(handle: handle) -> str
+    description: "Read one line from file"
+  
+  - name: file_readlines
+    signature: fn(handle: handle) -> array
+    description: "Read all lines from file"
+  
+  - name: file_writeline
+    signature: fn(handle: handle, line: str) -> bool
+    description: "Write line to file"
+  
+  - name: file_eof
+    signature: fn(handle: handle) -> bool
+    description: "Check if at end of file"
+  
+  - name: file_size
+    signature: fn(path: str) -> i32
+    description: "Get file size in bytes"
+  
+  - name: file_delete
+    signature: fn(path: str) -> bool
+    description: "Delete file"
+  
+  - name: file_copy
+    signature: fn(src: str, dst: str) -> bool
+    description: "Copy file"
+  
+  - name: file_rename
+    signature: fn(old: str, new: str) -> bool
+    description: "Rename file"
+
+implementation: attributes/file
