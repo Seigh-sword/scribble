@@ -1,8 +1,1 @@
-# Hello.scrib
-
-# This is a placeholder `.scrib` file. Scribble files will use the `.scrib` extension.
-# The language is intended to allow embedding or referencing C, C++, and assembly units.
-
-// Example usage (conceptual):
-// embed C { int foo() { return 1; } }
-// call C++ main which links C and assembly units
+output["hello"]

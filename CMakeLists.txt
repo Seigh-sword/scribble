@@ -4,6 +4,9 @@ project(scribble LANGUAGES C CXX ASM)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# Build shared libraries (DLLs on Windows, .so on Linux)
+option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
+
 # Runtime example (mixed C/C++/asm)
 add_executable(scribble_example
     src/main.cpp
