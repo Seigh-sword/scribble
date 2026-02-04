@@ -16,11 +16,24 @@ REPO_URL="https://github.com/Seigh-sword/scribble.git"
 INSTALL_DIR="${HOME}/.scribble"
 BIN_DIR="${INSTALL_DIR}/bin"
 
-echo -e "${BLUE}╔════════════════════════════════════════╗${NC}"
-echo -e "${BLUE}║  Scribble Auto-Installer             ║${NC}"
-echo -e "${BLUE}║  One-click setup & auto-updates      ║${NC}"
-echo -e "${BLUE}╚════════════════════════════════════════╝${NC}"
+echo -e "${BLUE}"
+echo " ███████╗ ██████╗██████╗ ██╗██████╗ ██████╗ ██╗     ███████╗"
+echo " ██╔════╝██╔════╝██╔══██╗██║██╔══██╗██╔══██╗██║     ██╔════╝"
+echo " ███████╗██║     ██████╔╝██║██████╔╝██████╔╝██║     ███████╗"
+echo " ╚════██║██║     ██╔══██╗██║██╔═══╝ ██╔═══╝ ██║     ╚════██║"
+echo " ███████║╚██████╗██║  ██║██║██║     ██║     ███████╗███████║"
+echo " ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝     ╚═╝     ╚══════╝╚══════╝"
+echo -e "${NC}"
+echo -e "${GREEN}        Scribble Auto-Installer & Updater v2.0.0${NC}"
 echo ""
+
+# --- Cleanup old versions ---
+echo -e "${YELLOW}🔍 Searching for old binaries...${NC}"
+if [ -f "${INSTALL_DIR}/ses" ]; then
+    echo -e "  - Found old 'ses' binary. Removing..."
+    rm -f "${INSTALL_DIR}/ses"
+    echo -e "${GREEN}  ✓ Removed 'ses'${NC}"
+fi
 
 # Check requirements
 echo -e "${YELLOW}Checking requirements...${NC}"
@@ -55,6 +68,14 @@ echo -e "${YELLOW}Setting up launcher...${NC}"
 mkdir -p "$BIN_DIR" # Ensure bin directory exists
 mv launcher.sh "$BIN_DIR/scribble" # Move launcher to bin and rename
 chmod +x "$BIN_DIR/scribble"
+
+# Set up PAS (Package Automation System)
+echo -e "${YELLOW}Setting up PAS (Package Manager)...${NC}"
+cat > "$BIN_DIR/pas" << 'EOF'
+#!/bin/bash
+scribble package "$@"
+EOF
+chmod +x "$BIN_DIR/pas"
 
 # Add to PATH
 echo -e "${YELLOW}Adding to PATH...${NC}"

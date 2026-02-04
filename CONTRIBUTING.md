@@ -23,8 +23,11 @@ You will need the following tools installed on your system:
   - **Windows:** `MSVC` (via Visual Studio Community)
 - **Rust:** For building the performance-critical attributes. Install it via rustup.
 
-***Important detail if you want to use CODESPACE USE IT. WE RECOMMEND IT! IF YOU HAVE THESE ALREADY, WORKING ON YOUR DEVICE CAN BE
-BETTER TOO.***
+### Recommended Environment
+
+For a quick and consistent setup, we highly recommend using **GitHub Codespaces**. It provides a pre-configured cloud environment with all the necessary tools installed.
+
+If you prefer to work on your local machine, please ensure all the prerequisites listed above are installed correctly.
 
 ### Build Steps
 
@@ -46,7 +49,7 @@ BETTER TOO.***
     cmake --build build
     ```
 
-    The main executable will be located at `build/compiler/ses` (or `build/compiler/Release/ses.exe` on Windows).
+    The main executable will be located at `build/compiler/ses` (or `build/compiler/Release/ses.exe` on Windows). This is the internal binary that gets packaged as `scribble-core` in official releases.
 
 ### Contribution Workflow
 

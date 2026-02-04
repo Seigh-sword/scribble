@@ -46,6 +46,6 @@ check_and_update() {
 # Run auto-update check in background
 check_and_update &
 
-# Execute ses command
+# Execute scribble-core command
 cd "$INSTALL_DIR"
 exec ./scribble-core "$@"

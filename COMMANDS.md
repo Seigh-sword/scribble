@@ -4,6 +4,8 @@ Scribble uses the `scribble` command for easy project management.
 
 ## Available Commands
 
+### Core Commands
+
 ### `scribble build`
 Builds the complete Scribble compiler and runtime.
 ```bash
@@ -40,10 +42,10 @@ Tests:
 4. Compilation to x86-64 assembly
 5. Runtime example execution
 
-### `ses lint`
+### `scribble execute lint`
 Checks code style and potential issues.
 ```bash
-ses lint
+scribble execute lint
 ```
 - Scans for TODO/FIXME comments
 - Checks for trailing whitespace

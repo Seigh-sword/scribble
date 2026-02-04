@@ -66,15 +66,17 @@ Compiler Structure
 ## Commands
 
 ```bash
-scribble build      # Build compiler and runtime
-scribble check      # Comprehensive code checker
-scribble test       # Run test suite
-scribble lint       # Check code style
-scribble compile    # Compile .scrib files
-scribble tree       # Show project structure
-scribble clean      # Remove build artifacts
-scribble help       # Show help
-scribble version    # Show version
+scribble build              # Build compiler and runtime
+scribble execute check      # Comprehensive code checker
+scribble execute test       # Run test suite
+scribble execute lint       # Check code style
+scribble compile            # Compile .scrib files
+scribble execute tree       # Show project structure
+scribble execute clean      # Remove build artifacts
+scribble package-lib        # Package a library for distribution
+pas install <lib>           # Install a library (Packaged And Scribble)
+scribble help               # Show help
+scribble version            # Show version
 ```
 
 ## Next Steps
@@ -88,8 +90,8 @@ scribble version    # Show version
 
 **Scribble is free for everyone.**
 
-- You can use it in your apps and websites for free.
-- You should **not** charge people to use the compiler.
-- AI tools (LLMs) are allowed to use/write Scribble even if they are paid services.
+- You can use it in your apps and websites for free. without any dev permissions
+- You should **not** charge people to use the compiler. **WE RECOMMEND IT BEING FREE**
+- AI tools (AI LLMs) are allowed to use/write Scribble even if they are paid services.
 
-See LICENSE for details.
+See **[LICENSE](https://github.com/Seigh-sword/scribble?tab=License-1-ov-file)** for details.

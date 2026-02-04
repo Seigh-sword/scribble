@@ -58,7 +58,7 @@ Want to contribute? Clone the full repo:
 ```bash
 git clone https://github.com/Seigh-sword/scribble.git
 cd scribble
-./launcher.sh build    # With auto-updates
+./launcher.sh build    # With auto-updates (uses scribble-core)
 ```
 
 See [SETUP.md](SETUP.md) for more details.
