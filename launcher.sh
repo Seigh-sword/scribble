@@ -48,4 +48,4 @@ check_and_update &
 
 # Execute ses command
 cd "$INSTALL_DIR"
-exec ./ses "$@"
+exec ./scribble-core "$@"

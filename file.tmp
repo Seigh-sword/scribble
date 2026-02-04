@@ -1,98 +1,157 @@
-# Scribble Setup Guide
+# Scribble v2.0.0 Commands
 
-## One-Click Installation
+Scribble uses the `scribble` command for easy project management.
 
-Scribble has **automatic installers** that handle everything for you!
+## Available Commands
 
-### On Linux/Mac
-
-**Step 1:** Download the installer
-```bash
-curl -fsSL https://raw.githubusercontent.com/Seigh-sword/scribble/main/install.sh -o install.sh
-chmod +x install.sh
-./install.sh
-```
-
-**Step 2:** That's it! The installer will:
- - ✓ Download the latest release
- - ✓ Install everything you need
-
-**Step 3:** Reload your shell and use it:
+### `scribble build`
+Builds the complete Scribble compiler and runtime.
 ```bash
 scribble build
-scribble check
+```
+- Cleans previous build
+- Runs CMake configuration
+- Compiles all C++, C, and assembly sources
+- Outputs to `build/bin/`
+
+### `scribble execute check`
+Comprehensive code checker that inspects every file and reports errors.
+```bash
+scribble execute check
+```
+- Displays full project tree structure
+- Checks C++ headers and sources
+- Validates C files
+- Inspects assembly files
+- Verifies Rust attribute crates
+- Validates JSON configuration files
+- Runs CMake configuration check
+- **Generates detailed error/warning report**
+
+### `scribble test`
+Runs the test suite (5 comprehensive tests).
+```bash
 scribble test
 ```
+Tests:
+1. Compiler help/usage
+2. Compilation to C++
+3. Compilation to C
+4. Compilation to x86-64 assembly
+5. Runtime example execution
 
-### On Windows
-
-**Step 1:** Download `install.bat` from the repo
+### `ses lint`
+Checks code style and potential issues.
+```bash
+ses lint
 ```
-https://github.com/Seigh-sword/scribble/raw/main/install.bat
+- Scans for TODO/FIXME comments
+- Checks for trailing whitespace
+- Validates include paths
+- Reports style issues
+
+### `ses compile`
+Compiles `.scrib` files using the Scribble compiler.
+```bash
+ses compile examples/hello.scrib
+ses compile examples/hello.scrib --lang c
+ses compile examples/hello.scrib --lang asm --output generated.s
+```
+Options:
+- `--lang cpp|c|asm` - Output language (default: cpp)
+- `--output <file>` - Output filename
+
+### `ses tree`
+Displays the project structure and statistics.
+```bash
+ses tree
+```
+Shows:
+- Full directory tree (excluding build/ and .git/)
+- Line counts by file type
+- File statistics
+- Crate summary
+
+### `ses clean`
+Removes the build directory.
+```bash
+ses clean
 ```
 
-**Step 2:** Double-click `install.bat` and it will:
- - ✓ Download the latest release (Zip with DLLs)
- - ✓ Install everything you need
-
-**Step 3:** Close and reopen Command Prompt, then:
-```cmd
-scribble build
-scribble help
+### `ses version`
+Display version information.
+```bash
+ses version
 ```
 
-## Auto-Update System
-
-After installation, Scribble can be updated by re-running the installer.
-(Automatic updates are planned for a future version).
-
-## What Gets Installed
-
-```
-~/.scribble/                (Linux/Mac)
-%APPDATA%\Scribble\         (Windows)
-├── build/                  (Compiled files)
-├── bin/                    (Executables + DLLs)
-├── compiler/               (Source code)
-├── attributes/             (Rust crates)
-└── ... (all Scribble files)
+### `ses help`
+Show the help menu.
+```bash
+ses help
 ```
 
-## Requirements
-
-None! Just download and run.
-
-## Usage After Installation
+## Workflow Example
 
 ```bash
-scribble build              # Build everything
-scribble check              # Check all files
-scribble test               # Run tests
-scribble compile <file>     # Compile .scrib files
-scribble tree               # Show project structure
-scribble help               # Show all commands
+# 1. Build the compiler
+ses build
+
+# 2. Check all files
+ses check
+
+# 3. Run tests
+ses test
+
+# 4. Compile a .scrib file
+ses compile examples/hello.scrib --lang cpp
+
+# 5. View project structure
+ses tree
+
+# 6. Lint code
+ses lint
+
+# 7. Clean build
+ses clean
 ```
 
-## Troubleshooting
+## Output Example: `ses check`
 
-**"Command not found: scribble"**
- - Check that `%APPDATA%\Scribble\bin` (Windows) or `~/.scribble/bin` (Mac/Linux) is in your PATH.
+```
+========================================
+Scribble: Comprehensive Code Checker
+========================================
 
-## Manual Installation (Advanced)
+Project Structure:
+[Full tree displayed]
 
-If installers don't work:
+Checking C++ Files:
+✓ compiler/src/lexer.cpp (200 lines, 5234 bytes)
+  ✓ Header guards OK
+  ✓ Stream operators found
 
-```bash
-git clone https://github.com/Seigh-sword/scribble.git
-cd scribble
-chmod +x ses launcher.sh
-cmake -S . -B build
-cmake --build build -j
-./ses build
+...
+
+Checking Configuration Files:
+✓ attributes.json (valid JSON)
+✓ package.json (valid JSON)
+
+Compilation Check:
+✓ CMakeLists.txt found
+✓ CMake configuration OK
+
+========================================
+Check Summary
+========================================
+  Files checked: 32
+  Errors found: 0
+  Warnings: 0
+  Status: ✓ ALL CHECKS PASSED
 ```
 
-Then use:
-```bash
-./launcher.sh build    # With auto-updates
-./ses build            # Without auto-updates
-```
+## Tips
+
+- Run `scribble execute check` before committing code
+- Use `scribble execute test` to verify compiler works
+- `scribble execute tree` shows project statistics
+- `scs` is located in project root

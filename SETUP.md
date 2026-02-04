@@ -20,8 +20,8 @@ chmod +x install.sh
 **Step 3:** Reload your shell and use it:
 ```bash
 scribble build
-scribble check
-scribble test
+scribble execute check
+scribble execute test
 ```
 
 ### On Windows
@@ -96,10 +96,10 @@ If installers don't work:
 ```bash
 git clone https://github.com/Seigh-sword/scribble.git
 cd scribble
-chmod +x ses launcher.sh
 cmake -S . -B build
 cmake --build build -j
-./ses build
+cp build/compiler/ses scribble-core
+./scribble-core build
 ```
 
 Then use:

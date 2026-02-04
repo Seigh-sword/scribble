@@ -11,8 +11,8 @@ File extension: `.scrib`
 
 ```bash
 scribble build    # Build compiler
-scribble check    # Check all files
-scribble test     # Run tests
+scribble execute check    # Check all files
+scribble execute test     # Run tests
 scribble compile examples/hello.scrib --lang cpp
 ```
 
@@ -63,18 +63,18 @@ Compiler Structure
 - **compiler/CMakeLists.txt** — Compiler-specific config
 - **attributes/*/Cargo.toml** — Rust crate configs
 
-## Commands (via scs - Scribble Code Service)
+## Commands
 
 ```bash
-./scs build      # Build compiler and runtime
-./scs check      # Comprehensive code checker
-./scs test       # Run test suite
-./scs lint       # Check code style
-./scs compile    # Compile .scrib files
-./scs tree       # Show project structure
-./scs clean      # Remove build artifacts
-./scs help       # Show help
-./scs version    # Show version
+scribble build      # Build compiler and runtime
+scribble check      # Comprehensive code checker
+scribble test       # Run test suite
+scribble lint       # Check code style
+scribble compile    # Compile .scrib files
+scribble tree       # Show project structure
+scribble clean      # Remove build artifacts
+scribble help       # Show help
+scribble version    # Show version
 ```
 
 ## Next Steps

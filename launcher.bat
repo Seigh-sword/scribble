@@ -5,4 +5,4 @@
 cd /d "%~dp0.."
 
 :: Execute the main service, passing all arguments
-ses.exe %*
+scribble-core.exe %*

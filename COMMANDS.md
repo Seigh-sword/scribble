@@ -14,10 +14,10 @@ scribble build
 - Compiles all C++, C, and assembly sources
 - Outputs to `build/bin/`
 
-### `ses check`
+### `scribble execute check`
 Comprehensive code checker that inspects every file and reports errors.
 ```bash
-ses check
+scribble execute check
 ```
 - Displays full project tree structure
 - Checks C++ headers and sources
@@ -28,10 +28,10 @@ ses check
 - Runs CMake configuration check
 - **Generates detailed error/warning report**
 
-### `ses test`
+### `scribble test`
 Runs the test suite (5 comprehensive tests).
 ```bash
-ses test
+scribble test
 ```
 Tests:
 1. Compiler help/usage

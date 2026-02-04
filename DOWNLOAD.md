@@ -40,8 +40,8 @@ After installation, open a terminal and run:
 ```bash
 scribble help           # Show all commands
 scribble build          # Build
-scribble check          # Check files
-scribble test           # Run tests
+scribble execute check  # Check files
+scribble execute test   # Run tests
 ```
 
 ## Auto-Updates

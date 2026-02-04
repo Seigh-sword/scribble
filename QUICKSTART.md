@@ -59,12 +59,12 @@ All these commands work:
 
 ```bash
 scribble build              # Build compiler
-scribble check              # Check everything
-scribble test               # Run tests  
+scribble execute check      # Check everything
+scribble execute test       # Run tests  
 scribble compile <file>     # Compile .scrib files
-scribble tree               # See project structure
-scribble lint               # Check for errors
-scribble clean              # Remove build files
+scribble execute tree       # See project structure
+scribble execute lint       # Check for errors
+scribble execute clean      # Remove build files
 scribble help               # Show all commands
 scribble version            # Show version
 ```
@@ -106,6 +106,7 @@ Missing something? The installer will tell you!
 ├── bin/
 │   ├── scribble          ← Use this!
 │   └── scribblec         ← The compiler
+│   └── scribble-core     ← The compiler
 ├── build/                ← Compiled files
 ├── compiler/             ← Source code
 ├── attributes/           ← Rust fast parts
