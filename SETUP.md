@@ -1,4 +1,4 @@
-# Scribble Setup Guide
+# Scribble v2.0.0 Setup Guide
 
 ## One-Click Installation
 

@@ -1,4 +1,7 @@
-# Scribble
+# Scribble v2.0.0
+
+![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
+![License](https://img.shields.io/badge/license-Scribble_Free-green.svg)
 
 Scribble is an experimental polyglot language/runtime for beginners and hobbyists that mixes Python-like syntax with C, C++, assembly, and Rust "attributes" for performance-critical parts.
 
@@ -80,3 +83,13 @@ Compiler Structure
 - Expand `.scrib` language features and examples
 - Integrate graphics/canvas rendering
 - Create language documentation and tutorials
+
+## License
+
+**Scribble is free for everyone.**
+
+- You can use it in your apps and websites for free.
+- You should **not** charge people to use the compiler.
+- AI tools (LLMs) are allowed to use/write Scribble even if they are paid services.
+
+See LICENSE for details.

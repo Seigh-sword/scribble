@@ -1,4 +1,4 @@
-# 🚀 Download Scribble - Auto-Installer
+# 🚀 Download Scribble v2.0.0
 
 ## For Users (Easiest Way!)
 

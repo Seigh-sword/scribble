@@ -1,4 +1,4 @@
-# 🎯 Scribble Quick Start
+# 🎯 Scribble v2.0.0 Quick Start
 
 ## TL;DR (Super Quick)
 

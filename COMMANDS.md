@@ -1,4 +1,4 @@
-# Build & Development Commands
+# Scribble v2.0.0 Commands
 
 Scribble uses the `scribble` command for easy project management.
 
