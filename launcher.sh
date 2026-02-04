@@ -19,8 +19,25 @@ check_and_update() {
     
     # Check if we need to update (24 hour cooldown)
     if [ $((now - last_update)) -gt $UPDATE_INTERVAL ]; then
-        # Binary update logic would go here (downloading new tarball)
-        # For now, we skip git-based updates
+        echo "[Scribble] Checking for updates..." >&2
+        
+        # Determine OS
+        OS="$(uname -s)"
+        case "${OS}" in
+            Linux*)     ASSET="scribble-linux.tar.gz";;
+            Darwin*)    ASSET="scribble-mac.tar.gz";;
+            *)          ASSET="";;
+        esac
+
+        if [ ! -z "$ASSET" ]; then
+             # Download and extract to install dir
+             if curl -L -s "https://github.com/Seigh-sword/scribble/releases/latest/download/$ASSET" -o /tmp/scribble_update.tar.gz; then
+                 tar -xzf /tmp/scribble_update.tar.gz -C "$INSTALL_DIR"
+                 rm /tmp/scribble_update.tar.gz
+                 echo "[Scribble] Updated to latest version." >&2
+             fi
+        fi
+
         # Update timestamp
         echo "$now" > "$LAST_UPDATE_FILE"
     fi
