@@ -1,13 +1,13 @@
 # Build & Development Commands
 
-Scribble uses **ses** (Scribble Execution Service) CLI for easy project management.
+Scribble uses the `scribble` command for easy project management.
 
 ## Available Commands
 
-### `ses build`
+### `scribble build`
 Builds the complete Scribble compiler and runtime.
 ```bash
-ses build
+scribble build
 ```
 - Cleans previous build
 - Runs CMake configuration

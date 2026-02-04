@@ -7,10 +7,10 @@ File extension: `.scrib`
 ## Quick Start
 
 ```bash
-./scs build    # Build compiler
-./scs check    # Check all files
-./scs test     # Run tests
-./scs compile examples/hello.scrib --lang cpp
+scribble build    # Build compiler
+scribble check    # Check all files
+scribble test     # Run tests
+scribble compile examples/hello.scrib --lang cpp
 ```
 
 See `COMMANDS.md` for full documentation.

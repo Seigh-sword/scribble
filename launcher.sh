@@ -19,25 +19,8 @@ check_and_update() {
     
     # Check if we need to update (24 hour cooldown)
     if [ $((now - last_update)) -gt $UPDATE_INTERVAL ]; then
-        echo "[SES] Checking for updates..." >&2
-        cd "$INSTALL_DIR"
-        
-        # Fetch latest from GitHub
-        if git fetch origin main > /dev/null 2>&1; then
-            # Check if there are changes
-            if ! git diff --quiet origin/main; then
-                echo "[SES] Updates found! Installing..." >&2
-                git pull origin main > /dev/null 2>&1
-                
-                # Rebuild
-                if [ -f "CMakeLists.txt" ]; then
-                    cmake -S . -B build -DBUILD_SHARED_LIBS=ON > /dev/null 2>&1
-                    cmake --build build -j$(nproc) > /dev/null 2>&1
-                    echo "[SES] ✓ Updated and rebuilt" >&2
-                fi
-            fi
-        fi
-        
+        # Binary update logic would go here (downloading new tarball)
+        # For now, we skip git-based updates
         # Update timestamp
         echo "$now" > "$LAST_UPDATE_FILE"
     fi

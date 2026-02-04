@@ -76,18 +76,7 @@ scribble help               # Show all commands
 ## Troubleshooting
 
 **"Command not found: scribble"**
-- Reopen your terminal/Command Prompt
-- Or add manually to PATH
-
-**"Git not found"**
-- Install Git from https://git-scm.com
-
-**"CMake not found"**
-- Install CMake from https://cmake.org
-
-**Updates not working**
-- Check internet connection
-- Or manually run: `git pull` in installation folder
+ - Check that `%APPDATA%\Scribble\bin` (Windows) or `~/.scribble/bin` (Mac/Linux) is in your PATH.
 
 ## Manual Installation (Advanced)
 

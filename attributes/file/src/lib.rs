@@ -4,7 +4,8 @@ use std::io::{Read, Write};
 #[no_mangle]
 pub extern "C" fn file_read(path: *const u8) -> *const u8 {
     if let Ok(path_str) = unsafe { std::ffi::CStr::from_ptr(path as *const i8).to_str() } {
-        if let Ok(content) = fs::read_to_string(path_str) {
+        if let Ok(mut content) = fs::read_to_string(path_str) {
+            content.push('\0'); // Ensure C-string compatibility
             let boxed = Box::leak(content.into_boxed_str());
             return boxed.as_ptr();
         }

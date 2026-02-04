@@ -24,51 +24,40 @@ echo ""
 
 # Check requirements
 echo -e "${YELLOW}Checking requirements...${NC}"
-for cmd in git cmake; do
-    if ! command -v $cmd &> /dev/null; then
-        echo -e "${RED}✗ $cmd not found. Please install it first.${NC}"
-        exit 1
-    fi
-done
-echo -e "${GREEN}✓ All requirements met${NC}"
+if ! command -v curl &> /dev/null; then
+    echo -e "${RED}✗ curl not found. Please install it.${NC}"
+    exit 1
+fi
 echo ""
 
 # Download/update repo
 echo -e "${YELLOW}Setting up Scribble...${NC}"
-if [ -d "$INSTALL_DIR" ]; then
-    echo -e "  Updating existing installation..."
-    cd "$INSTALL_DIR"
-    git pull origin main
-else
-    echo -e "  Downloading from GitHub..."
-    git clone "$REPO_URL" "$INSTALL_DIR"
-    cd "$INSTALL_DIR"
-fi
+mkdir -p "$INSTALL_DIR"
 
-# Build with CMake
-echo -e "${YELLOW}Building...${NC}"
-cmake -S . -B build -DBUILD_SHARED_LIBS=ON
-cmake --build build -j$(nproc)
+# Detect OS for download
+OS="$(uname -s)"
+case "${OS}" in
+    Linux*)     ASSET="scribble-linux.tar.gz";;
+    Darwin*)    ASSET="scribble-mac.tar.gz";;
+    *)          echo "Unsupported OS"; exit 1;;
+esac
 
-# Create launcher wrapper
-echo -e "${YELLOW}Creating launcher...${NC}"
-mkdir -p "$BIN_DIR"
-
-cat > "$BIN_DIR/scribble" << 'EOF'
-#!/bin/bash
-INSTALL_DIR="${HOME}/.scribble"
+echo -e "  Downloading compiled binaries..."
 cd "$INSTALL_DIR"
-# Auto-update check
-if [ "$(date +%s)" -gt "$(stat -c %Y .last-update 2>/dev/null || echo 0)" + 86400 ]; then
-    git pull origin main > /dev/null 2>&1 && cmake --build build -j$(nproc) > /dev/null 2>&1
-    touch .last-update
-fi
-./ses "$@"
-EOF
+curl -L "https://github.com/Seigh-sword/scribble/releases/latest/download/$ASSET" -o scribble.tar.gz
 
+echo -e "  Extracting..."
+tar -xzf scribble.tar.gz
+rm scribble.tar.gz
+
+# Set up launcher
+echo -e "${YELLOW}Setting up launcher...${NC}"
+mkdir -p "$BIN_DIR" # Ensure bin directory exists
+mv launcher.sh "$BIN_DIR/scribble" # Move launcher to bin and rename
 chmod +x "$BIN_DIR/scribble"
 
 # Add to PATH
+echo -e "${YELLOW}Adding to PATH...${NC}"
 SHELL_RC=""
 if [ -f "$HOME/.bashrc" ]; then SHELL_RC="$HOME/.bashrc"; fi
 if [ -f "$HOME/.zshrc" ]; then SHELL_RC="$HOME/.zshrc"; fi

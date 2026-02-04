@@ -28,7 +28,7 @@ Scribble = Your Own Programming Language
 │   ├── string (text)
 │   └── file (read/write)
 ├── 🦀 Built-in Rust (FAST!)
-├── 🤖 Auto-updates (checks GitHub daily)
+├── 📦 Pre-compiled Binaries (No building!)
 └── 💻 Works everywhere (Windows, Mac, Linux)
 ```
 
